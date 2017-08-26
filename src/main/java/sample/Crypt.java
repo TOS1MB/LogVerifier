@@ -3,9 +3,7 @@ package sample;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.codec.digest.HmacUtils;
 
-/**
- * Created by tolgasirvan on 30.06.17.
- */
+
 public class Crypt {
     // http://stackoverflow.com/questions/4895523/java-string-to-sha1
 
@@ -30,26 +28,8 @@ public class Crypt {
         return sha1;
     }
 
-    public static String generateHmac(String secretKey, String data, int lineCounter
-	/* String algorithm e.g. "HmacSHA256" */) {
+    public static String generateHmac(String secretKey, String data, int lineCounter) {
 
-        // SecretKeySpec signingKey = new SecretKeySpec(secretKey.getBytes(),
-        // algorithm);
-        //
-        // try {
-        // Mac mac = Mac.getInstance(algorithm);
-        // mac.init(signingKey);
-        //
-        // byte[] hMac = mac.doFinal(data.getBytes());
-        //
-        // return hMac;
-        // } catch (InvalidKeyException e) {
-        // throw new IllegalArgumentException("invalid secret key provided (key
-        // not printed for security reasons!)");
-        // } catch (NoSuchAlgorithmException e) {
-        // throw new IllegalStateException("the system doesn't support algorithm
-        // " + algorithm, e);
-        // }
 
         while (lineCounter > 0) {
             secretKey = encryptString(secretKey);
